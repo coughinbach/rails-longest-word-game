@@ -1,7 +1,9 @@
-<h1>results:</h1>
-
-<div class="letters">
-  <% @letters.each do |letter|%>
+<div class="box">
+  <div class="header">
+    <h1>results:</h1>
+  </div>
+  <div class="letters">
+    <% @letters.each do |letter|%>
       <% if @guess.upcase.include?(letter) %>
         <div class="chosen-letter">
           <p><%= letter.upcase %></p>
@@ -11,22 +13,22 @@
           <p><%= letter.upcase %></p>
         </div>
       <% end %>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="results">
+    <% if @english_word && @valid_word %>
+      <p>"<%= @guess.upcase %>" is a good guess!
+      <br>
+      You scored <%= @guess.length * 100 %> points!</p>
+    <% elsif @english_word %>
+      <p>"<%= @guess.upcase %>" can't be found in the letters above!</p>
+    <% elsif @valid_word %>
+      <p>"<%= @guess.upcase %>" is not an english word!</p>
+    <% else %>
+      <p>"<%= @guess.upcase %>" is not an enlgish word and can't be found in the letters above.
+        <br>
+      i'm not sure what you did there</p>
+    <% end %>
+  </div>
+  <%= link_to "Play again", new_path, class: "btn-form" %>
 </div>
-
-<% if @english_word && @valid_word %>
-  <p>"<%= @guess.upcase %>" is a good guess!
-  <br>
-  You scored <%= @guess.length * 100 %> points!</p>
-<% elsif @english_word %>
-  <p>"<%= @guess.upcase %>" can't be found in the letters above!</p>
-<% elsif @valid_word %>
-  <p>"<%= @guess.upcase %>" is not an english word!</p>
-<% else %>
-  <p>"<%= @guess.upcase %>" is not an enlgish word and can't be found in the letters above.
-    <br>
-  i'm not sure what you did there</p>
-<% end %>
-<br>
-<br>
-<%= link_to "Play again", new_path %>
