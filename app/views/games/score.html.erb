@@ -1,0 +1,28 @@
+<h1>Games#score</h1>
+<p>Find me in app/views/games/score.html.erb</p>
+
+<div class="letters">
+  <% @letters.each do |letter|%>
+      <% if @guess.upcase.include?(letter) %>
+        <div class="chosen-letter">
+          <p><%= letter.upcase %></p>
+        </div>
+      <% else %>
+        <div class="letter">
+          <p><%= letter.upcase %></p>
+        </div>
+      <% end %>
+  <% end %>
+</div>
+
+<% if @english_word && @valid_word %>
+  "<%= @guess.upcase %>" is a good guess!
+<% elsif @english_word %>
+  "<%= @guess.upcase %>" can't be found in the letters above!
+<% elsif @valid_word %>
+  "<%= @guess.upcase %>" is not an english word!
+<% else %>
+  "<%= @guess.upcase %>" is not an enlgish word and can't be found in the letters above. i'm not sure what you did there
+<% end %>
+
+<%= link_to "Play again", new_path %>
