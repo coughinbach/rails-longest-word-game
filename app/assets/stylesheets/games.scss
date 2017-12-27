@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-color: #b1ede8;
+  background-color: #4f5d75;
 }
 
-h1 {
+h1, h2, p {
+  color: #383a42;
+}
 
+i {
+  font-style: normal;
+  color: #ef8354;
 }
 
 h2 {
@@ -14,11 +19,11 @@ h2 {
 }
 
 p {
-
+  font-size: 16px;
 }
 
 .box {
-  background-color: #fffcf9;
+  background-color: #f9f8f2;
   padding: 10px 20px 30px 20px;
   margin-top: 40px;
 }
@@ -36,21 +41,20 @@ p {
   height: 50px;
   width: 50px;
   border-radius: 2px;
-  background-color: #3e92cc;
+  background-color: #a3c4bc;
   margin: 20px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   p {
     color: white;
-    font-weight: lighter;
     font-size: 24px;
     margin: 0px;
   }
 }
 
 .chosen-letter {
-  border: 3px solid #16324f;
+  border: 3px solid #4f5d75;
 }
 
 .form {
@@ -60,21 +64,38 @@ p {
 }
 
 .form-bar {
-  width: 350px;
-  height: 40px;
+  width: 380px;
+  height: 45px;
   padding: 0px 10px;
   border-radius: 2px;
-  border: 1px solid gray;
+  border: none;
 }
 
 .btn-form {
-  height: 40px;
-  width: 60px;
+  height: 45px;
+  width: 70px;
+}
+
+.btn-back {
+  padding: 20px;
+}
+
+.btn-form, .btn-back {
   border-radius: 2px;
   border: none;
-  background-color: red;
-  padding: 10px;
+  background-color: #ef8354;
+  color: white;
+  text-decoration: none;
   &:hover {
-    background-color: white;
+    background-color: #a3c4bc;
+    color: white;
+    text-decoration: none;
   }
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
