@@ -1,5 +1,4 @@
-<h1>Games#score</h1>
-<p>Find me in app/views/games/score.html.erb</p>
+<h1>results:</h1>
 
 <div class="letters">
   <% @letters.each do |letter|%>
@@ -16,13 +15,18 @@
 </div>
 
 <% if @english_word && @valid_word %>
-  "<%= @guess.upcase %>" is a good guess!
+  <p>"<%= @guess.upcase %>" is a good guess!
+  <br>
+  You scored <%= @guess.length * 100 %> points!</p>
 <% elsif @english_word %>
-  "<%= @guess.upcase %>" can't be found in the letters above!
+  <p>"<%= @guess.upcase %>" can't be found in the letters above!</p>
 <% elsif @valid_word %>
-  "<%= @guess.upcase %>" is not an english word!
+  <p>"<%= @guess.upcase %>" is not an english word!</p>
 <% else %>
-  "<%= @guess.upcase %>" is not an enlgish word and can't be found in the letters above. i'm not sure what you did there
+  <p>"<%= @guess.upcase %>" is not an enlgish word and can't be found in the letters above.
+    <br>
+  i'm not sure what you did there</p>
 <% end %>
-
+<br>
+<br>
 <%= link_to "Play again", new_path %>
